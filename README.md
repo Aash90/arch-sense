@@ -114,34 +114,6 @@ Users see **agent thinking**, not just conclusions → builds trust and learning
 
 ---
 
-## 📡 API Endpoints (10)
-
-### Sessions
-```
-POST   /sessions              Create new game session
-GET    /sessions              List all sessions
-GET    /sessions/{id}         Get session state
-DELETE /sessions/{id}         End session
-```
-
-### Game Loop
-```
-POST   /sessions/{id}/evaluate           Submit design → get coach feedback
-POST   /sessions/{id}/accept-feedback    User responds to coaching
-POST   /sessions/{id}/advance-phase      Progress to next phase
-```
-
-### Progress & History
-```
-GET    /sessions/{id}/progress           Score, badges, next milestone
-GET    /sessions/{id}/design-evolution   Design history + reasoning chain
-GET    /health                            Server status + active sessions
-```
-
-All documented with **Swagger** → `http://localhost:8000/docs`
-
----
-
 ## 🎮 Game Flow
 
 ```
@@ -297,36 +269,6 @@ CREATE TABLE design_evolution (
 - **Cloud Run** - Serverless deployment
 - **AWS Lambda + API Gateway** - Serverless alternative
 - **Heroku** - Platform-as-a-service
-
----
-
-## ✅ What's Included
-
-### Backend (17 files, ~2,300 LOC)
-- ✅ Full FastAPI implementation (10 endpoints)
-- ✅ 3 AI coach agents (per-session, stateful)
-- ✅ Game mechanics engine (scoring, badges, progression)
-- ✅ SQLite database (3 tables, auto-initialized)
-- ✅ Pydantic type system (16 models + 3 enums)
-- ✅ ReAct reasoning visualization
-- ✅ Integration tests (test_api.py)
-- ✅ Setup script (setup.py)
-- ✅ Configuration management (.env support)
-
-### Documentation (6+ guides)
-- ✅ Quick start guide
-- ✅ Complete architecture overview
-- ✅ Backend API documentation
-- ✅ Frontend integration guide
-- ✅ Production deployment instructions
-- ✅ API examples & cURL reference
-
-### Quality Assurance
-- ✅ Type-safe end-to-end (Pydantic + TypeScript)
-- ✅ Tested endpoints (all 10 tested)
-- ✅ Error handling (centralized, structured)
-- ✅ CORS configured (localhost:5173)
-- ✅ Async/await throughout (no blocking)
 
 ---
 
